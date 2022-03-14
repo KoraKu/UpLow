@@ -21,14 +21,11 @@ int main(int argc, char* argv[]) {
 		if ( counter % 2 == 0) {
 			char tmp = toupper(argv[1][i]);
 			newString[i] = tmp;
-
-			counter++;
 		} else {
 			char tmp = tolower(argv[1][i]);
 			newString[i] = tmp;
-
-			counter++;
 		}
+	counter++;
 	}
 
 	printf("%s \n", newString);
