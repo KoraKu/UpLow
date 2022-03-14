@@ -14,5 +14,5 @@ YoUr tExT
 ## Installation
 
 - Clone the repository
-- Copy `uplow` to ~/bin
+- `make install`
 - Now you can enjoy uplow in the terminal
