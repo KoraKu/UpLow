@@ -1,4 +1,4 @@
-# UpLow Program
+# UpLow program
  A simple way to express sarcasm with text.
 
 ## Usage 
@@ -6,13 +6,13 @@
 ```bash
 uplow "Your text"
 ```
-Out 
-```
-YoUr tExT
-```
+
+### Parameters
+ - none : default atlternating caps
+ - `-r` : random caps
 
 ## Installation
 
-- Clone the repository
-- `make install`
-- Now you can enjoy uplow in the terminal
+- clone the repository
+- copy `uplow` to ~/bin
+- now you can enjoy uplow in the terminal
