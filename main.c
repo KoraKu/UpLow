@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
 			}
 		}
 		/* print the current argument converted */
-		printf("%s ", newString);
+		printf("%s\n", newString);
 	}
 
 	printf("\n");
