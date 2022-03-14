@@ -13,13 +13,15 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
+	/* generate new rand seed from time */
 	time_t t;
 	srand(time(&t));
 
-	int i = 0;
+	/* argument to start on (skip flags) */
 	int startarg = 1;
 	bool random = false;
 
+	/* if -r is a flag, make output random */
 	if (strcmp(argv[1], "-r") == 0){
 		random = true;
 		startarg += 1;
@@ -49,6 +51,7 @@ int main(int argc, char* argv[]) {
 				counter++;
 			}
 		}
+		/* print the current argument converted */
 		printf("%s ", newString);
 	}
 
