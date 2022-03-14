@@ -14,5 +14,6 @@ uplow "Your text"
 ## Installation
 
 - clone the repository
-- copy `uplow` to ~/bin
+- go to `code`
+- `make install`
 - now you can enjoy uplow in the terminal
