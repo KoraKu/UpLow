@@ -4,10 +4,10 @@
 ## Usage 
 
 ```bash
-uplow "Your text"
+uplow [OPTION] "Your text"
 ```
 
-### Parameters
+### Options
  - none : default atlternating caps
  - `-r` : random caps
 
