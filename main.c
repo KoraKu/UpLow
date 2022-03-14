@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdbool.h>
+#include <time.h>
 
 int main(int argc, char* argv[]) {
 
@@ -9,26 +12,46 @@ int main(int argc, char* argv[]) {
 		fprintf(stderr, "%s required at least 1 argument but 0 where provided", argv[0]);
 		return 1;
 	}
+	time_t t;
+	srand(time(&t));
 
-	int len = strlen(argv[1]);
-	char newString[len];
+	int i = 0;
+	int startarg = 1;
+	bool random = false;
+
+	if (strcmp(argv[1], "-r") == 0){
+		random = true;
+		startarg += 1;
+	}
+
 
 	int counter = 0;
 
 	//Converting loop
-	for(int i = 0; i<len; i++) {
-		// we do toupper or tolower depending on counter
-		if ( counter % 2 == 0) {
-			char tmp = toupper(argv[1][i]);
-			newString[i] = tmp;
-		} else {
-			char tmp = tolower(argv[1][i]);
-			newString[i] = tmp;
+	for (int j = startarg; j<argc; j++){
+		int len = strlen(argv[j]);
+		char newString[len];
+
+		for(int i = 0; i<len; i++) {
+			// we do toupper or tolower depending on counter
+			if ( counter % 2 == 0) {
+				char tmp = toupper(argv[j][i]);
+				newString[i] = tmp;
+			} else {
+				char tmp = tolower(argv[j][i]);
+				newString[i] = tmp;
+			}
+
+			if (random){
+				counter = rand() % 2;
+			} else {
+				counter++;
+			}
 		}
-	counter++;
+		printf("%s ", newString);
 	}
 
-	printf("%s \n", newString);
+	printf("\n");
 
 	return 0;
 }
