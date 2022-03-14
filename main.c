@@ -12,6 +12,7 @@ int main(int argc, char* argv[]) {
 		fprintf(stderr, "%s required at least 1 argument but 0 where provided", argv[0]);
 		return 1;
 	}
+
 	time_t t;
 	srand(time(&t));
 
