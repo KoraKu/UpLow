@@ -18,16 +18,16 @@ int main(int argc, char* argv[]) {
 	//Converting loop
 	for(int i = 0; i<len; i++) {
 		// we do toupper or tolower depending on counter
-		if (counter == 0) {
+		if ( counter % 2 == 0) {
 			char tmp = toupper(argv[1][i]);
 			newString[i] = tmp;
 
-			counter = 1;
+			counter++;
 		} else {
 			char tmp = tolower(argv[1][i]);
 			newString[i] = tmp;
 
-			counter = 0;
+			counter++;
 		}
 	}
 
