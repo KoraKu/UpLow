@@ -24,3 +24,4 @@ clear :
 
 install : $(TARGET)
 	mv $(TARGET) ~/bin/$(INSTALL_NAME)
+	chmod 777 ~/bin/$(INSTALL_NAME)
