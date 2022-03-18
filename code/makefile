@@ -1,7 +1,5 @@
-FILENAME = main.c
-TARGET = main
-
-INSTALL_NAME = uplow
+SOURCE = main.c
+TARGET = uplow
 
 # Getting all sources files in src folder
 SOURCES = $(wildcard src/*.c)
@@ -9,19 +7,22 @@ SOURCES = $(wildcard src/*.c)
 OBJECTS = $(patsubst src/%.c, obj/%.o, $(SOURCES))
 
 # Rule to compute the main program while requiring the objects files
-$(TARGET) : $(FILENAME) $(OBJECTS)
-	gcc $(FILENAME) $(OBJECTS) -o $(TARGET)
+$(TARGET) : $(SOURCE) $(OBJECTS)
+	gcc $^ -o $@
 
 # Implicit rule to compute the object file
 obj/%.o : src/%.c
 	gcc -c $^ -o $@
 
-run : $(OUT)
-	 ./$(OUT)
+run : $(TARGET)
+	 ./$^
 
 clear :
-	rm -f $(OUT) $(OBJECTS)
+	rm -f $(TARGET) obj/*
 
 install : $(TARGET)
-	mv $(TARGET) ~/bin/$(INSTALL_NAME)
-	chmod 777 ~/bin/$(INSTALL_NAME)
+	mv $^ ~/bin/
+	chmod 777 ~/bin/$^
+
+uninstall:
+	rm ~/bin/$(TARGET)
